@@ -1,0 +1,45 @@
+//Ejercicio 6 - Trabajando con listas
+
+
+//Creamos array lista de la compra
+let listaCompra = ["papel de cocina", "leche", "lechuga", "champú", "pimiento"]
+//añadimos al final de la lista el aceite de girasol
+listaCompra.push("aceite de girasol")
+
+//eliminamos el último elemento, aceite de girasol
+listaCompra.pop()
+
+//Lista de 3 películas favoritas
+
+let listaPelis = [
+    {titulo: "Regreso al futuro", director: "Robert Zemeckis", fecha: 1985},
+    {titulo: "WALL-E", director: "Andrew Stanton", fecha: 2008},
+    {titulo: "El Mago de los Sueños", director: "Francisco Macián", fecha: 1966}
+]
+//filtramos películas creadas a partir del año 2010
+let newPelis = listaPelis.filter(valor => valor.fecha > 2010)
+console.log(newPelis) // []
+
+//Creamos una nueva lista solo con los directores
+
+let directores = listaPelis.map((valor) => {
+    return `${valor.director}`
+})
+console.log(directores) // ['Robert Zemeckis', 'Andrew Stanton', 'Francisco Macián' ]
+
+//Creamos una nueva lista solo con los titulos
+
+let titulos = listaPelis.map((valor) => {
+    return `${valor.titulo}`
+})
+console.log(titulos)// ['Regreso al futuro', 'WALL-E', ' El Mago de los Sueños' ]
+
+//Una nueva lista que concatene la lista de directores y titulos
+
+let listaDirectoresTitulos = directores.concat(titulos)
+console.log(listaDirectoresTitulos) // ['Robert Zemeckis', 'Andrew Stanton', 'Francisco Macián', 'Regreso al futuro', 'WALL-E', ' El Mago de los Sueños' ]
+
+//Una  nueva lista que concatene la lista de directores y la lista de los títulos utilizando el factor de propagación
+
+let listaDirectoresTitulosPropagacion = [...directores, ...titulos]
+console.log(listaDirectoresTitulosPropagacion) // ['Robert Zemeckis', 'Andrew Stanton', 'Francisco Macián', 'Regreso al futuro', 'WALL-E', ' El Mago de los Sueños' ]
