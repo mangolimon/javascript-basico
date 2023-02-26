@@ -22,11 +22,7 @@ console.log(miEdad) // 34
 
 const amiguis = [
     {
-        nombre: 'Mª Ángeles',
-        apellido: 'Gómez',
-        edad: 34,
-        altura: 168,
-        eresDesarrollador: false
+        ...miObjeto
     },
     {
         nombre: 'Gloria',
